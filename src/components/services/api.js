@@ -1,6 +1,14 @@
 import axios from 'axios';
-export const getApi = async params => {
-  const { data } = await axios.get('https://dummyjson.com/products', {
+axios.defaults.baseURL = 'https://dummyjson1.com/';
+export const fetchAllProducts = async params => {
+  const { data } = await axios.get('products', {
+    params: { skip: 0, limit: 6, ...params },
+  });
+  return data;
+};
+
+export const fetchProductsByQuery = async params => {
+  const { data } = await axios.get('products/search', {
     params: { skip: 0, limit: 6, ...params },
   });
   return data;
