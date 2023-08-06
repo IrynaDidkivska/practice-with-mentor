@@ -9,7 +9,7 @@ import { EmptyCart } from './EmptyCart/EmptyCart';
 
 export const App = () => {
   const [products, setProducts] = useState([]);
-  const [limit, setLimit] = useState(3);
+  const [limit] = useState(3);
   const [skip, setSkip] = useState(0);
   const [cart, setCart] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
