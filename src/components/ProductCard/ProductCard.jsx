@@ -1,6 +1,13 @@
 import React from 'react';
 
-export const ProductCard = ({ id, title, price, description, thumbnail }) => {
+export const ProductCard = ({
+  id,
+  title,
+  price,
+  description,
+  thumbnail,
+  onAddItem,
+}) => {
   return (
     <li>
       <img src={thumbnail} alt={title} />
@@ -8,7 +15,8 @@ export const ProductCard = ({ id, title, price, description, thumbnail }) => {
       <p>{description}</p>
       <div>
         <p>{price}</p>
-        <button>Add to cart</button>
+        {/* <button onClick={() => onAddItem(product)}>Add to cart</button> */}
+        <button onClick={onAddItem}>Add to cart</button>
       </div>
     </li>
   );
