@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'styles/Button';
 
 export const CartItem = ({ id, title, price, thumbnail, onDelete }) => {
   return (
@@ -7,7 +8,7 @@ export const CartItem = ({ id, title, price, thumbnail, onDelete }) => {
         <img src={thumbnail} alt={title} />
         <h2>{title}</h2>
         <p>{price}</p>
-        <button onClick={onDelete}>Delete</button>
+        <Button onClick={onDelete}>Delete</Button>
       </li>
     </div>
   );

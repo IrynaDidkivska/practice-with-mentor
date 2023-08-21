@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { Button } from 'styles/Button';
 
 export const Overlay = styled.div`
   position: fixed;
@@ -17,4 +18,12 @@ export const StyledModal = styled.div`
   max-width: calc(100vw - 48px);
   max-height: calc(100vh - 24px);
   background-color: white;
+  padding: 5px 8px;
+`;
+
+export const StyledModalBtn = styled(Button)`
+  display: flex;
+  align-items: center;
+  margin-left: 0;
+  gap: 3px;
 `;

@@ -1,11 +1,14 @@
 import React from 'react';
-import { Overlay, StyledModal } from './Modal.styled';
+import { Overlay, StyledModal, StyledModalBtn } from './Modal.styled';
+import { AiOutlineCloseCircle } from 'react-icons/ai';
 
 export const Modal = ({ children, onClose }) => {
   return (
     <Overlay>
       <StyledModal>
-        <button onClick={onClose}>Close</button>
+        <StyledModalBtn onClick={onClose}>
+          Close <AiOutlineCloseCircle width={1.2} height={1.2} />
+        </StyledModalBtn>
         {children}
       </StyledModal>
     </Overlay>

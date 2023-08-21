@@ -1,19 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
+import {
+  SearchFormButton,
+  SearchIcon,
+  StyledSearchForm,
+  StyledSearchFormInput,
+} from './SearchForm.styled';
+import { useDispatch } from 'react-redux';
 
-export const SearchForm = ({ onSetQuery }) => {
-  const [query, setQuery] = useState('');
-
-  const handleInputChange = event => {
-    setQuery(event.target.value);
-  };
-  const handleSubmitForm = e => {
+export const SearchForm = () => {
+  const dispatch = useDispatch();
+  const handleSearchForm = e => {
     e.preventDefault();
-    onSetQuery(query);
   };
+
   return (
-    <form onSubmit={handleSubmitForm}>
-      <input type="text" value={query} onChange={handleInputChange} />
-      <button>Search</button>
-    </form>
+    <StyledSearchForm onSubmit={handleSearchForm}>
+      <StyledSearchFormInput
+        type="text"
+        autoComplete="off"
+        autoFocus
+        placeholder="Enter your query"
+      />
+      <SearchFormButton>
+        <SearchIcon />
+      </SearchFormButton>
+    </StyledSearchForm>
   );
 };
